@@ -1,1 +1,1 @@
-from .states import SomeState
+from .states import GetProductInfo

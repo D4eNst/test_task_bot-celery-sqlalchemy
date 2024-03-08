@@ -7,7 +7,7 @@ from sqlalchemy import pool
 from repository.base import Base
 from repository.database import async_db
 
-from repository.models.test_model import Test
+from repository.models.user_requests import UserRequests
 
 config = context.config
 config.set_main_option(name="sqlalchemy.url", value=f"{str(async_db.set_async_db_uri)}?async_fallback=True")
