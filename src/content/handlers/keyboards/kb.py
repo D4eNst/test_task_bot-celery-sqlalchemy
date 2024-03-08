@@ -12,7 +12,7 @@ def get_reply_kb(items: str | list):
     builder = ReplyKeyboardBuilder()
     [builder.button(text=text) for text in items]
 
-    return builder.as_markup(resize_keyboard=True, one_time_keyboard=True)
+    return builder.as_markup(resize_keyboard=True)
 
 
 # Remove keyboard
