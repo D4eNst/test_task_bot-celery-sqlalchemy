@@ -12,3 +12,9 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 #     ikb_builder.button(text="➡", callback_data="arrow_next")
 #
 #     return ikb_builder.as_markup()
+
+def get_reply_kb(items: dict):
+    ikb_builder = InlineKeyboardBuilder()
+    [ikb_builder.button(text=key, callback_data=value) for key, value in items.items()]
+
+    return ikb_builder.as_markup()

@@ -18,16 +18,20 @@ def get_reply_kb(items: str | list):
 # Remove keyboard
 rkr = ReplyKeyboardRemove()
 
-# Example keyboard:
-# def main_menu_btn() -> ReplyKeyboardMarkup:
-#     keyboard = ReplyKeyboardMarkup(keyboard=[
-#         [
-#             KeyboardButton(
-#                 text="text"
-#             ),
-#         ]
-#     ], resize_keyboard=True)
-#     return keyboard
-#
-# or a variable:
-# main_kb = main_menu_btn()
+
+def main_menu_btn() -> ReplyKeyboardMarkup:
+    keyboard = ReplyKeyboardMarkup(keyboard=[
+        [
+            KeyboardButton(text="Получить информацию по товару"),
+            KeyboardButton(text="Получить информацию из БД")
+        ],
+        [
+            KeyboardButton(text="Остановить уведомления")
+        ]
+    ],
+        resize_keyboard=True
+    )
+    return keyboard
+
+
+main_menu_btn = main_menu_btn()
