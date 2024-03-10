@@ -30,6 +30,8 @@ class Settings(BaseSettings):
     POSTGRES_USER: str = config("POSTGRES_USER", cast=str)  # type: ignore
     POSTGRES_PASSWORD: str = config("POSTGRES_PASSWORD", cast=str)  # type: ignore
 
+    NOTIFICATION_FREQUENCY: float = config("NOTIFICATION_FREQUENCY", cast=float, default=300.0)  # type: ignore
+
     @property
     def redis_url(self) -> str:
         return f"redis://:{self.REDIS_PASSWORD}@{self.REDIS_HOST}:{self.REDIS_PORT}"

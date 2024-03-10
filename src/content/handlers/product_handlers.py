@@ -50,6 +50,6 @@ async def get_requests_from_db(msg: types.Message, session: AsyncSession) -> Non
     user_requests = await repo.find_last_5_records(tg_id=msg.from_user.id)
     ans_list = []
     for req in user_requests:
-        ans_list.append(f"Article: {req.article}, date: {req.created_at}")
-
-    await msg.answer("\n".join(ans_list))
+        ans_list.append(f"📚 Артикул: {req.article}\n🗓 Дата запроса: {req.created_at:%Y-%m-%d %H:%M:%S}")
+    sep = "\n" + "-"*55 + "\n"
+    await msg.answer(sep.join(ans_list))

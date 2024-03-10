@@ -3,14 +3,14 @@ import logging
 
 from aiogram.methods import DeleteWebhook
 
-from bot import dp, bot
-from content.middlewares.middleware import rg_middlewares
+from src.bot import dp, bot
 from src.content.handlers.routs import (
     basic_router,
     product_router,
     notification_router
 )
-from utils import start_with, stop_with
+from src.content.middlewares.middleware import rg_middlewares
+from src.utils import start_with, stop_with
 
 logging.basicConfig(level=logging.INFO)
 
