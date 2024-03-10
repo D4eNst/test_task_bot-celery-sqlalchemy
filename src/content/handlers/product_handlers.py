@@ -48,7 +48,7 @@ async def send_info(msg: types.Message, state: FSMContext, session: AsyncSession
 async def get_requests_from_db(msg: types.Message, session: AsyncSession) -> None:
     repo = UserRequestsRepo(session)
     user_requests = await repo.find_last_5_records(tg_id=msg.from_user.id)
-    ans_list = []
+    ans_list = ["Данные из БД"]
     for req in user_requests:
         ans_list.append(f"📚 Артикул: {req.article}\n🗓 Дата запроса: {req.created_at:%Y-%m-%d %H:%M:%S}")
     sep = "\n" + "-"*55 + "\n"
